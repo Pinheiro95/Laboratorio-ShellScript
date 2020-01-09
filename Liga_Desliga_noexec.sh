@@ -23,8 +23,6 @@
 #	Execute o script como root para aplicar as opcoes
 #-------------------------------------------------------------------#
 
-#!/bin/bash
-
 case $1 in
  	start)
  		mount -o remount,rw,noexec /var
