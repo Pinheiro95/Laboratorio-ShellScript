@@ -25,9 +25,15 @@
 #	      debsecan, rkhunter, chkrootkit
 #-------------------------------------------------------------------#
 
-#cria diretorio que contem os arquivos criados pelo script
-mkdir /var/log/auditoriaSecOps
-cd /audtoriaSecOps
+#verifica/cria diretorio que contem os arquivos criados pelo script
+
+if [ -e "/var/log/audtoriaSecOps" ]
+	then
+		cd /var/log//audtoriaSecOps
+	else
+		mkdir /var/log/auditoriaSecOps
+		cd /var/log/auditoriaSecOps
+	fi
 
 #auditoria com debsecan. Primeiro criando um arquivo reportando as vulnerabilidades encontradas
 #depois atualiza os pacotes com brechas de segurança baseada na lista de vulnerabilidades do Mitre
