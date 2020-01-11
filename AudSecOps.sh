@@ -22,7 +22,7 @@
 #Obs:
 #	Execute o script como root para aplicar as opcoes
 #       É necessário ter os seguintes programas instalados previamente:
-#	debsecan, rkhunter, chkrootkit
+#	      debsecan, rkhunter, chkrootkit
 #-------------------------------------------------------------------#
 
 #cria diretorio que contem os arquivos criados pelo script
@@ -38,7 +38,7 @@ apt-get install $(cat AtualizaPacotes.txt)
 
 #Procura por rootkit
 rkhunter --cronjob --rwo > RkHunterResults.txt
-chkrootkit > chkrootkitResults.txt
+exec /usr/sbin/chkrootkit > chkrootkitResults.txt
 
 echo "Auditoria finalizada. Verifique os arquivos presentes na em /var/log/AuditoriaSecOps"
 echo "auditoria.txt - vulnerabilidades encontradas (consulte o CVE)"
